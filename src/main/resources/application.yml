@@ -1,0 +1,15 @@
+server:
+    port: 2181
+spring:
+    kafka:
+        bootstrap-servers: 192.168.1.119:9092,192.168.1.126:9092
+        default-topic: test11
+        consumer:
+          key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+          value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+          group-id: group-1
+        producer:
+          key-serializer: org.apache.kafka.common.serialization.StringSerializer
+          value-serializer: org.apache.kafka.common.serialization.StringSerializer
+          batch-size: 65536
+          buffer-memory: 524288
